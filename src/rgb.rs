@@ -12,9 +12,9 @@ impl RGB {
             idx += 1;
         }
 
-        let r = s[idx..idx + 2].parse()?;
-        let g = s[idx + 2..idx + 4].parse()?;
-        let b = s[idx + 4..idx + 6].parse()?;
+        let r = u8::from_str_radix(&s[idx..idx + 2], 16)?;
+        let g = u8::from_str_radix(&s[idx + 2..idx + 4], 16)?;
+        let b = u8::from_str_radix(&s[idx + 4..idx + 6], 16)?;
 
         Ok(RGB { r, g, b })
     }
